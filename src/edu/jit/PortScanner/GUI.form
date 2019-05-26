@@ -1,16 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="edu.jit.PortScanner.GUI">
-  <grid id="27dc6" binding="rootPanel" layout-manager="GridLayoutManager" row-count="4" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+  <grid id="27dc6" binding="rootPanel" layout-manager="GridLayoutManager" row-count="5" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="533" height="400"/>
+      <xy x="20" y="20" width="650" height="429"/>
     </constraints>
-    <properties/>
+    <properties>
+      <doubleBuffered value="true"/>
+      <inheritsPopupMenu value="false"/>
+      <maximumSize width="-1" height="-1"/>
+      <minimumSize width="650" height="420"/>
+      <name value=""/>
+      <opaque value="true"/>
+      <preferredSize width="650" height="420"/>
+      <visible value="true"/>
+    </properties>
     <border type="none"/>
     <children>
       <component id="39c4e" class="javax.swing.JLabel">
         <constraints>
-          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="扫描IP"/>
@@ -18,7 +27,7 @@
       </component>
       <component id="d0681" class="javax.swing.JLabel">
         <constraints>
-          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="端口"/>
@@ -26,7 +35,7 @@
       </component>
       <component id="f4e2b" class="javax.swing.JTextField" binding="textField1" default-binding="true">
         <constraints>
-          <grid row="0" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+          <grid row="0" column="2" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="349" height="30"/>
           </grid>
         </constraints>
@@ -36,7 +45,7 @@
       </component>
       <component id="a0a0e" class="javax.swing.JTextField" binding="textField2" default-binding="true">
         <constraints>
-          <grid row="1" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+          <grid row="1" column="2" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="349" height="30"/>
           </grid>
         </constraints>
@@ -44,25 +53,9 @@
           <toolTipText value="多个端口用,分隔.连续端口用-相连.例如22,25,80-88,443"/>
         </properties>
       </component>
-      <component id="14d2c" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="扫描状态"/>
-        </properties>
-      </component>
-      <component id="b8a77" class="javax.swing.JTextArea" binding="statusArea">
-        <constraints>
-          <grid row="3" column="0" row-span="1" col-span="4" vsize-policy="6" hsize-policy="6" anchor="0" fill="3" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="200"/>
-          </grid>
-        </constraints>
-        <properties/>
-      </component>
       <component id="8f3ea" class="javax.swing.JLabel" binding="PortsLable">
         <constraints>
-          <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="1" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="....."/>
@@ -70,7 +63,7 @@
       </component>
       <component id="6c51e" class="javax.swing.JLabel" binding="IPLable">
         <constraints>
-          <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
           <text value="....."/>
@@ -78,17 +71,79 @@
       </component>
       <component id="ce2ff" class="javax.swing.JButton" binding="startButton">
         <constraints>
-          <grid row="2" column="2" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="3" column="3" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="82" height="24"/>
+          </grid>
         </constraints>
         <properties>
           <text value="开始扫描"/>
         </properties>
       </component>
-      <hspacer id="72abc">
+      <component id="80047" class="javax.swing.JLabel">
         <constraints>
-          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
-      </hspacer>
+        <properties>
+          <text value="线程数"/>
+        </properties>
+      </component>
+      <component id="bff93" class="javax.swing.JTextField" binding="a5TextField" default-binding="true">
+        <constraints>
+          <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="50" height="-1"/>
+          </grid>
+        </constraints>
+        <properties>
+          <horizontalAlignment value="11"/>
+          <text value="5"/>
+        </properties>
+      </component>
+      <scrollpane id="ff24b" binding="scrollPane">
+        <constraints>
+          <grid row="4" column="1" row-span="1" col-span="4" vsize-policy="0" hsize-policy="0" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <minimum-size width="492" height="285"/>
+            <preferred-size width="492" height="285"/>
+            <maximum-size width="492" height="285"/>
+          </grid>
+        </constraints>
+        <properties>
+          <autoscrolls value="true"/>
+          <doubleBuffered value="false"/>
+          <horizontalScrollBarPolicy value="31"/>
+          <verticalScrollBarPolicy value="20"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="4a35d" class="javax.swing.JTextArea" binding="textArea1" default-binding="true">
+            <constraints/>
+            <properties>
+              <columns value="82"/>
+              <editable value="false"/>
+              <lineWrap value="true"/>
+              <maximumSize width="-1" height="300"/>
+              <minimumSize width="-1" height="19"/>
+              <preferredSize width="492" height="285"/>
+              <rows value="15"/>
+              <wrapStyleWord value="true"/>
+            </properties>
+          </component>
+        </children>
+      </scrollpane>
+      <component id="14d2c" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false">
+            <preferred-size width="48" height="24"/>
+          </grid>
+        </constraints>
+        <properties>
+          <text value="扫描状态"/>
+        </properties>
+      </component>
+      <vspacer id="29578">
+        <constraints>
+          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="4" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </vspacer>
     </children>
   </grid>
 </form>
