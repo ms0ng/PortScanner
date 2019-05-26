@@ -23,12 +23,14 @@ public class Thread4Scan implements Runnable{
         String[] plist=Ports.split(",");
         for(int i=0;i<plist.length;i++){
             try {
+                if(Integer.parseInt(plist[i])<=0||Integer.parseInt(plist[i])>65535)throw new UnvalidPortsInputException(plist[i]);
                 ports.add(Integer.parseInt(plist[i]));
             }catch (NumberFormatException e){
                 try {
                     String[] mports=plist[i].split("-");
                     int minPort=Integer.parseInt(mports[0]);
                     int maxPort=Integer.parseInt(mports[1]);
+
                     if(minPort>=maxPort)throw new UnvalidPortsInputException(plist[i]);
                     for (;minPort<=maxPort;minPort++)ports.add(minPort);
                 }catch (NumberFormatException e1){
