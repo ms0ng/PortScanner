@@ -7,9 +7,11 @@ public class TestClass {
     /*
     openPorts:尝试在本机上开放的端口,多个端口用英文逗号分开,不支持连续端口
     scanPorts:尝试扫描的端口,多个端口用英文逗号分开,连续端口用-连接.
+    threads:线程数
      */
     static String openPorts="233,344,65500";
     static String scanPorts="22-25,55,66,77,88,200-233,340-350,65500";
+    static int threads=5;
     public static void main(String[] args) {
         try {
             //在本机上开放端口
@@ -22,7 +24,6 @@ public class TestClass {
             Thread4Scan scanner=new Thread4Scan("127.0.0.1",scanPorts);
             System.out.println("初始化扫描的端口:"+scanner.ports);
             ThreadGroup tg=new ThreadGroup("tg");
-            int threads=5;
             for(int i=0;i<threads;i++){
                 Thread t=new Thread(tg,scanner,"t"+i);
                 t.start();

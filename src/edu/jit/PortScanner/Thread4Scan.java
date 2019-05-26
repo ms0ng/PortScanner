@@ -1,10 +1,8 @@
 package edu.jit.PortScanner;
 
 import java.io.IOException;
-import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
-import java.util.regex.Pattern;
 
 public class Thread4Scan implements Runnable{
     String IP;
@@ -69,29 +67,4 @@ public class Thread4Scan implements Runnable{
 
     }
 
-    public static void main(String[] args) {
-        String str="22,33,44-55,333-350";
-        try {
-            ServerSocket socket=new ServerSocket(343);
-
-            Thread4Scan scanner=new Thread4Scan("127.0.0.1",str);
-            System.out.println("初始化扫描的端口:"+scanner.ports);
-            ThreadGroup tg=new ThreadGroup("tg");
-            int threads=5;
-            for(int i=0;i<threads;i++){
-                Thread t=new Thread(tg,scanner,"t"+i);
-                t.start();
-            }
-            while (tg.activeCount()>0);
-            System.out.println("已开启的端口:"+scanner.avaliables);
-            socket.close();
-
-
-        }catch (UnvalidPortsInputException e){
-            e.printError();
-        }catch (IOException e){
-            e.printStackTrace();
-        }
-
-    }
 }
